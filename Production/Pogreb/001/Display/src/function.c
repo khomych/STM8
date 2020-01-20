@@ -15,6 +15,7 @@
 //****************************************************************************
 uint32_t u32BeepCounter = 0;
 bool bBeepStatus = FALSE;
+uint32_t u32LedCounter = 0;
 
 extern uint32_t u32Millis; //Счетчик миллисекунд
 
@@ -62,11 +63,11 @@ void SendPacket(void)
   DataTransmite.StartMarker = *((uint32_t *)(&GoodStartMarker));
   DataTransmite.TxAddr = DataReceive.RxAddr;
   DataTransmite.RxAddr = DataReceive.TxAddr;
-  DataTransmite.Cmd = ReadRegister;
+  DataTransmite.Cmd = WriteRegister;
   DataTransmite.Status = DataReceive.Status;
   DataTransmite.Address = DataReceive.Address;
   DataTransmite.Data = DataReceive.Data;
-  DataTransmite.CRC8 = DataReceive.CRC8;
+  DataTransmite.CRC8 = Crc8(((uint8_t *)(&DataTransmite)) , DATA_PACKER_LEN-1);
   //Включаем прерывания если TX буфер свободен и начинаем отправлять данные.
 UART1_ITConfig( UART1_IT_TXE, ENABLE);
 }
@@ -111,19 +112,19 @@ uint32_t Millis(void)
 *
 *   Возвращаемые значения :
 *
-*   Параметры : (uint8_t)status. 0 - передавать в бесконечном цикле для обработки времени работы
-*                                1 - одинарный Beep
-*                                2 - двойной Beep
+*   Параметры : (uint8_t)status. BEEP_REFRESH - передавать в бесконечном цикле для обработки времени работы
+*                                BEEP_ONE - одинарный Beep
+*                                BEEP_DOUBLE - двойной Beep
 *
 *   Задача : Beep
 *            
 *            
 *****************************************************************************/
-void Beep(uint8_t status)
+void Beep(BeepCMD status)
 {
   switch (status)
   {
-  case 0:
+  case BEEP_REFRESH:
     if(u32BeepCounter > Millis())
     {
       if(bBeepStatus == FALSE)
@@ -140,7 +141,7 @@ void Beep(uint8_t status)
     }
   break;
     
-  case 1:
+  case BEEP_ONE:
     if(bBeepStatus == FALSE)
     {
       BEEP_Cmd(ENABLE);
@@ -149,13 +150,53 @@ void Beep(uint8_t status)
     u32BeepCounter = Millis() + BEEP_DELAY;  
   break;
     
-  case 2:
+  case BEEP_DOUBLE:
     
     break;
     
     
   }
 }
+
+/*****************************************************************************
+*
+*   Имя функции : Led
+*
+*   Возвращаемые значения :
+*
+*   Параметры : (uint8_t)status. LED_REFRESH - передавать в бесконечном цикле для обработки времени работы
+*                                LED_FLASH - одинарный 
+*                                
+*
+*   Задача : Beep
+*            
+*            
+*****************************************************************************/
+
+void Led(LedCMD status)
+{
+  
+  switch (status)
+  {
+  case LED_REFRESH:
+    u32LedCounter = u32Millis + 50;
+    LED_ON;
+    break;
+    
+  case LED_FLASH:
+    if(u32LedCounter > u32Millis){
+      LED_ON;
+    }
+    else {
+      u32LedCounter = 0;
+      LED_OFF;
+    }
+    break;
+  }
+
+}
+
+
 
 void Delay_ms(uint16_t u16Delay)
 {

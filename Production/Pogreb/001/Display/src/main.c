@@ -48,7 +48,7 @@ bool b_1S_Flag = FALSE; //Флаг события 1 секунда
 bool b_EXTI_Flag = FALSE; //Флаг события внешнего прерывания
 uint32_t u32Millis; //Счетчик миллисекунд
 
-uint32_t u32LedCounter = 0;
+
 
 extern bool bPacketReceive;
 
@@ -148,52 +148,28 @@ void KeyScan(void)
 
 void KeyExitAction(void)
 {
-  Beep(1);
+  Beep(BEEP_ONE);
   LCD_GotoXY(0, 1);
   LCD_Char('X');
 }
 void KeyMenuAction(void)
 {
-  Beep(1);
+  Beep(BEEP_ONE);
   LCD_GotoXY(0, 1);
   LCD_Char('M');  
 }
 void KeyPlusAction(void)
 {
-  Beep(1);
+  Beep(BEEP_ONE);
   LCD_GotoXY(0, 1);
   LCD_Char('+');  
 }
 void KeyMinusAction(void){
-  Beep(1);
+  Beep(BEEP_ONE);
   LCD_GotoXY(0, 1);
   LCD_Char('-'); 
 }
-//******************************************************************************
-//                              Led
-//******************************************************************************
 
-void Led(uint8_t status)
-{
-  if(status == 1)
-  {
-    u32LedCounter = u32Millis + 50;
-    LED_ON;
-  }
-  else
-  {
-    if(u32LedCounter > u32Millis)
-    {
-      //u32LedCounter--;
-      LED_ON;
-    }
-    else
-    {
-      u32LedCounter = 0;
-      LED_OFF;
-    }
-  }
-}
 
 
 
@@ -232,15 +208,15 @@ void main(void)
   
   while (1)
   {
-    Beep(0);
-    Led(0);
+    Beep(BEEP_REFRESH);
+    Led(LED_REFRESH);
     if(b_1S_Flag == TRUE) actionTimer_1S();
     if(b_Key_Scan_Flag == TRUE)KeyScan();
     
     if(bPacketReceive == TRUE){
       bPacketReceive = FALSE;
       ReceivePacket();
-      Beep(1);
+      Beep(BEEP_ONE);
       
     }
   //printf("df");

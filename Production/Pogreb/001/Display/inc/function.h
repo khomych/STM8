@@ -17,6 +17,8 @@
 
 #define BEEP_FREQUENCY  BEEP_FREQUENCY_1KHZ
 
+#define DATA_PACKER_LEN (uint8_t)13
+
 typedef enum {
   ReadRegister = (uint8_t)0,
   WriteRegister = (uint8_t)1
@@ -27,7 +29,18 @@ typedef enum {
   Error = (uint8_t)0x01
 }MyBusStatus;
 
-#define DATA_PACKER_LEN (uint8_t)13
+typedef enum {
+  BEEP_REFRESH = (uint8_t)0x00,
+  BEEP_ONE = (uint8_t)0x01,
+  BEEP_DOUBLE = (uint8_t)0x02
+}BeepCMD;
+
+typedef enum {
+  LED_REFRESH = (uint8_t)0x00,
+  LED_FLASH = (uint8_t)0x01
+}LedCMD;
+
+
 
 typedef struct Bus{
   uint32_t StartMarker;
@@ -43,10 +56,11 @@ typedef struct Bus{
 
 
 uint32_t Millis(void);
-void Beep(uint8_t status);
+void Beep(BeepCMD status);
 void Delay_ms(uint16_t u16Delay);
 void SendPacket(void);
 void ReceivePacket(void);
+void Led(LedCMD status);
 
 uint8_t Crc8(uint8_t *pcBlock, uint8_t len);
 
