@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "D:\STM8\Production\Pogreb\001\Display\settings\Display.Debug.general.xcl" --backend -f "D:\STM8\Production\Pogreb\001\Display\settings\Display.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "F:\Projects\STM8\STM8\Production\Pogreb\001\Display\settings\Display.Debug.general.xcl" --backend -f "F:\Projects\STM8\STM8\Production\Pogreb\001\Display\settings\Display.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "D:\STM8\Production\Pogreb\001\Display\settings\Display.Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\STM8\Production\Pogreb\001\Display\settings\Display.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "F:\Projects\STM8\STM8\Production\Pogreb\001\Display\settings\Display.Debug.general.xcl" "--debug_file=%~1" --backend -f "F:\Projects\STM8\STM8\Production\Pogreb\001\Display\settings\Display.Debug.driver.xcl" 
 
 @echo off 
 :end

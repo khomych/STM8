@@ -75,8 +75,12 @@ void ReceivePacket(void)
 {
   
   uint8_t crc = Crc8(((uint8_t *)(&DataReceive)) , DATA_PACKER_LEN-1);
-  if(DataReceive.CRC8 != crc)DataReceive.Status = Error;
-  else DataReceive.Status = OK;
+  if(DataReceive.CRC8 != crc){
+    DataReceive.Status = Error;
+  }
+  else {
+    DataReceive.Status = OK;
+  }
   SendPacket();
 }
 
