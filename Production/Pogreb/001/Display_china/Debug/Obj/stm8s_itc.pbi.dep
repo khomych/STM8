@@ -1,0 +1,16 @@
+stm8s_itc.pbi: \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\src\stm8s_itc.c \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s_itc.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc/stm8s.h \
+  D:\STM8\Production\Pogreb\001\Display_china\inc\stm8s_conf.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s_adc1.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s_beep.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s_clk.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s_exti.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s_flash.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s_gpio.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s_spi.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s_tim4.h \
+  D:\STM8\Production\Pogreb\001\Display_china\lib\SPL\inc\stm8s_uart1.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\intrinsics.h

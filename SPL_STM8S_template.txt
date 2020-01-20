@@ -1,0 +1,5 @@
+содержимое архива скорировать в C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\stm8\config\template\project
+при созлании нового проекта выбрать "C project with STM8S SPL"
+к проекту подключена библиотека "STM8S_StdPeriph_Lib" немного подправленная для МК stm8s003
+читать вверху в main.c
+глючит на максимальной оптимизации

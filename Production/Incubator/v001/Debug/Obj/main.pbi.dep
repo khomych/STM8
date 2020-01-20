@@ -1,0 +1,27 @@
+main.pbi: D:\STM8\Production\Incubator\v001\inc\pid.h \
+  D:\STM8\Production\Incubator\v001\inc\Disp_7seg_555.h \
+  D:\STM8\Production\Incubator\v001\inc\lib_ds18b20.h \
+  D:\STM8\Production\Incubator\v001\inc\lib_1wire.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\ysizet.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\string.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\ystdio.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\DLib_Threads.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\xencoding_limits.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\DLib_Product.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\stdio.h \
+  D:\STM8\Production\Incubator\v001\inc\main.h \
+  D:\STM8\Production\Incubator\v001\lib\SPL\inc\stm8s_uart1.h \
+  D:\STM8\Production\Incubator\v001\lib\SPL\inc\stm8s_tim4.h \
+  D:\STM8\Production\Incubator\v001\lib\SPL\inc\stm8s_tim2.h \
+  D:\STM8\Production\Incubator\v001\lib\SPL\inc\stm8s_gpio.h \
+  D:\STM8\Production\Incubator\v001\lib\SPL\inc\stm8s_flash.h \
+  D:\STM8\Production\Incubator\v001\lib\SPL\inc\stm8s_exti.h \
+  D:\STM8\Production\Incubator\v001\lib\SPL\inc\stm8s_clk.h \
+  D:\STM8\Production\Incubator\v001\lib\SPL\inc\stm8s_adc1.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\intrinsics.h \
+  D:\STM8\Production\Incubator\v001\inc\stm8s_conf.h \
+  D:\STM8\Production\Incubator\v001\lib\SPL\inc\stm8s.h \
+  D:\STM8\Production\Incubator\v001\src\main.c

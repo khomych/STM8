@@ -1,0 +1,572 @@
+p@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libaccounts-glib
+Version: 1.15+14.04.20131126.2-0ubuntu3
+Depends: libc6 (>= 2.17), libglib2.0-0 (>= 2.37.3), libsqlite3-0 (>= 3.5.9), libxml2 (>= 2.7.4)
+Pre-Depends: multiarch-support
+Description: library for single signon
+ .
+ This package contains shared libraries to be used by applications.
+Homepage: http://code.google.com/p/accounts-sso/
+
+Package: libisccc90
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 87
+Maintainer: LaMont Jones <lamont@debian.org>
+Architecture: amd64
+Source: bind9
+Version: 1:9.9.5.dfsg-3
+Replaces: libbind0
+Depends: libc6 (>= 2.4), libisc95
+Conflicts: libbind0, libbind9-41
+Description: Command Channel Library used by BIND
+ The Berkeley Internet Name Domain (BIND) implements an Internet domain
+ name server.  BIND is the most widely-used name server software on the
+ Internet, and is supported by the Internet Software Consortium, www.isc.org.
+ .
+ This package delivers the libisccc shared library used by BIND's daemons
+ and clients, particularly rndc.
+
+Package: libtevent0
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 103
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: tevent
+Version: 0.9.28-0ubuntu0.14.04.1
+Config-Version: 0.9.19-1
+Depends: libc6 (>= 2.15), libtalloc2 (>= 2.1.0)
+Pre-Depends: multiarch-support
+Description: talloc-based event loop library - shared library
+ tevent is a simple library that can handle the main event loop for an
+ application. It supports three kinds of events: timed events, file
+ descriptors becoming readable or writable and signals.
+ .
+ Talloc is used for memory management, both internally and for private
+ data provided by users of the library.
+ .
+ This package provides the shared library file.
+Homepage: http://tevent.samba.org/
+Original-Maintainer: Jelmer Vernooij <jelmer@debian.org>
+
+Package: libgmime-2.6-0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 499
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: gmime
+Version: 2.6.20-0ubuntu1
+Depends: libc6 (>= 2.14), libglib2.0-0 (>= 2.31.8), libgpgme11 (>= 1.2.0), zlib1g (>= 1:1.1.4)
+Pre-Depends: multiarch-support
+Description: MIME message parser and creator library - runtime
+ GMime provides a core library and set of utilities which may be used for the
+ creation and parsing of messages using the Multipurpose Internet Mail
+ Extension (MIME).
+ .
+ This package contains the shared library of GMime.
+Homepage: http://spruce.sourceforge.net/gmime/
+Original-Maintainer: Mirco Bauer <meebey@debian.org>
+
+Package: rtkit
+Status: install ok installed
+Priority: optional
+Section: admin
+Installed-Size: 172
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Version: 0.10-3
+Depends: adduser, libc6 (>= 2.17), libcap2 (>= 2.10), libdbus-1-3 (>= 1.0.2)
+Recommends: dbus, policykit-1
+Conffiles:
+ /etc/dbus-1/system.d/org.freedesktop.RealtimeKit1.conf b25a6fdfd2c34e01338ec6f83556a190
+Description: Realtime Policy and Watchdog Daemon
+ RealtimeKit is a D-Bus system service that changes the
+ scheduling policy of user processes/threads to SCHED_RR
+ (i.e. realtime scheduling mode) on request. It is intended to
+ be used as a secure mechanism to allow real-time scheduling to
+ be used by normal user processes.
+Original-Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Homepage: http://0pointer.de/public/
+
+Package: x11-apps
+Status: install ok installed
+Priority: optional
+Section: x11
+Installed-Size: 2046
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Version: 7.7+2
+Replaces: bitmap, oclock, transset, x11perf, xbase-clients (<= 1:7.2.ds2-3), xbiff, xcalc, xclipboard, xclock, xconsole, xcursorgen, xditview, xeyes, xgc, xload, xlogo, xmag, xman, xmore, xwd, xwud
+Depends: libc6 (>= 2.14), libpng12-0 (>= 1.2.13-4), libsm6, libx11-6, libxaw7, libxcursor1 (>> 1.1.2), libxext6, libxft2 (>> 2.1.1), libxkbfile1, libxmu6, libxmuu1, libxrender1, libxt6 (>= 1:1.1.0), cpp
+Recommends: xbitmaps
+Suggests: mesa-utils
+Conflicts: bitmap, oclock, transset, x11perf, xbiff, xcalc, xclipboard, xclock, xconsole, xcursorgen, xditview, xeyes, xgc, xload, xlogo, xmag, xman, xmore, xwd, xwud
+Conffiles:
+ /etc/X11/app-defaults/XCalc-color c8efe9caf8987a902df98270e2b291c9
+ /etc/X11/app-defaults/Bitmap-nocase 083b6918e8d205a663bf9c42a3ddd11e
+ /etc/X11/app-defaults/XLogo-color 439375bf8e3b87f46eebf35f55a8dbb5
+ /etc/X11/app-defaults/Xman 1dfd5f7894ae4da2e8b3f743a0f1c239
+ /etc/X11/app-defaults/XConsole 8a26518ea0a076d1f328cbcf7adebd2d
+ /etc/X11/app-defaults/XLogo fb1407c8cb1574726a6eb743b0092407
+ /etc/X11/app-defaults/XCalc 7d0de2b61403c204e3cf5f33eee61d69
+ /etc/X11/app-defaults/Xedit-color 59d7f0d96f4346ae0fe4904d46daf53c
+ /etc/X11/app-defaults/Xditview-chrtr 98a562569a7db396c9a0d2e6d414067e
+ /etc/X11/app-defaults/XMore af46624bedc385811ea614861a58a601
+ /etc/X11/app-defaults/Xditview 49d35244a61618b60f17d3400f64a81e
+ /etc/X11/app-defaults/Bitmap 9af9c0989c2423f2b9a46e2c9f301ecf
+ /etc/X11/app-defaults/Clock-color 71673f12989686ae7f582269ef7aeed6
+ /etc/X11/app-defaults/Xgc 744adc578acb239541e378eb16e337f7
+ /etc/X11/app-defaults/Bitmap-color 946b659d5d6c41b6840f5e0df10680d9
+ /etc/X11/app-defaults/XClock 812dfcc6f6d83e2ae9da809c3bf11c67
+ /etc/X11/app-defaults/Xgc-color 8dfaceb0c12917fd0b1c77423f9f6a47
+ /etc/X11/app-defaults/XLoad 3ea554c7be110102e42e25d3d83c4134
+ /etc/X11/app-defaults/Xmag 9d88fcab4261fb63f94baddeddfed52d
+ /etc/X11/app-defaults/Xedit 013f41442eb431168793e1943779c8f3
+ /etc/X11/app-defaults/XClipboard daa3f5e325a6d091f6e2cdea6e36bc2e
+ /etc/X11/app-defaults/XClock-color 7b049809f0bca03c76480959e2e4db89
+Description: X applications
+ This package provides a miscellaneous assortment of X applications
+ that ship with the X Window System, including:
+  - atobm, bitmap, and bmtoa, tools for manipulating bitmap images;
+  - ico, a demo program animating polyhedrons;
+  - oclock and xclock, graphical clocks;
+  - rendercheck, a program to test render extension implementations;
+  - transset, a tool to set opacity property on a window;
+  - xbiff, a tool which tells you when you have new email;
+  - xcalc, a scientific calculator desktop accessory;
+  - xclipboard, a tool to manage cut-and-pasted text selections;
+  - xconsole, which monitors system console messages;
+  - xcursorgen, a tool for creating X cursor files from PNGs;
+  - xditview, a viewer for ditroff output;
+  - xedit, a simple text editor for X;
+  - xeyes, a demo program in which a pair of eyes track the pointer;
+  - xgc, a graphics demo;
+  - xload, a monitor for the system load average;
+  - xlogo, a demo program that displays the X logo;
+  - xmag, which magnifies parts of the X screen;
+  - xman, a manual page browser;
+  - xmore, a text pager;
+  - xwd, a utility for taking window dumps ("screenshots") of the X session;
+  - xwud, a viewer for window dumps created by xwd;
+  - Xmark, x11perf, and x11perfcomp, tools for benchmarking graphical
+    operations under the X Window System;
+ .
+ The xbiff, xcalc, xconsole, xedit and xman programs use bitmap images
+ provided by the xbitmaps package.
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libgail18
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 581
+Maintainer: Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: gtk+2.0
+Version: 2.24.23-0ubuntu1.4
+Config-Version: 2.24.23-0ubuntu1.1
+Depends: libatk1.0-0 (>= 1.32.0), libc6 (>= 2.2.5), libglib2.0-0 (>= 2.27.3), libpango-1.0-0 (>= 1.28.3), libgtk2.0-0 (= 2.24.23-0ubuntu1.4)
+Pre-Depends: multiarch-support
+Description: GNOME Accessibility Implementation Library -- shared libraries
+ Gail implements ATK interfaces for GTK+ widgets which are dynamically
+ loadable at runtime by a GTK+ application. Once loaded, those parts of
+ an application that use standard GTK+ widgets will have a basic level
+ of accessibility, without the need to modify the application at all.
+ .
+ This package contains the shared library.
+Homepage: http://www.gtk.org/
+Original-Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+
+Package: libgail18
+Status: install ok unpacked
+Priority: optional
+Section: libs
+Installed-Size: 580
+Maintainer: Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
+Architecture: i386
+Multi-Arch: same
+Source: gtk+2.0
+Version: 2.24.23-0ubuntu1.4
+Config-Version: 2.24.23-0ubuntu1.1
+Depends: libatk1.0-0 (>= 1.32.0), libc6 (>= 2.3.6-6~), libglib2.0-0 (>= 2.27.3), libpango-1.0-0 (>= 1.28.3), libgtk2.0-0 (= 2.24.23-0ubuntu1.4)
+Pre-Depends: multiarch-support
+Description: GNOME Accessibility Implementation Library -- shared libraries
+ Gail implements ATK interfaces for GTK+ widgets which are dynamically
+ loadable at runtime by a GTK+ application. Once loaded, those parts of
+ an application that use standard GTK+ widgets will have a basic level
+ of accessibility, without the need to modify the application at all.
+ .
+ This package contains the shared library.
+Homepage: http://www.gtk.org/
+Original-Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+
+Package: x11-common
+Status: install ok installed
+Priority: optional
+Section: x11
+Installed-Size: 492
+Maintainer: Ubuntu X-SWAT <ubuntu-x@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Source: xorg
+Version: 1:7.7+1ubuntu8
+Depends: debconf (>= 0.5) | debconf-2.0, lsb-base (>= 1.3-9ubuntu2)
+Conffiles:
+ /etc/X11/Xsession.d/30x11-common_xresources 61cebe25ee0c64e981b88958dfee6f9c
+ /etc/X11/Xsession.d/35x11-common_xhost-local 3080616d080574d7b06c2b2a20af53dd
+ /etc/X11/Xsession.d/40x11-common_xsessionrc db544c8543d1cb3762b9859288e77040
+ /etc/X11/Xsession.d/20x11-common_process-args 862c8286749d25fe58dd98cad24c3fe4
+ /etc/X11/Xsession.d/90x11-common_ssh-agent ae74aadf705c5fccf841ef921b45ca72
+ /etc/X11/Xsession.d/60x11-common_xdg_path 2e26bf3ff07f92cbfd1b12a63047f6c4
+ /etc/X11/Xsession.d/60x11-common_localhost 2353ea72efc0c3e101058c3c56e282b4
+ /etc/X11/Xsession.d/99x11-common_start 3874d5e8f3ec888f69adb126e223e168
+ /etc/X11/Xsession.d/50x11-common_determine-startup b4570043736ae7f22947067b6d28ab8d
+ /etc/X11/Xsession.options 210cd520efa87a5197cac01e10b3a84a
+ /etc/X11/Xresources/x11-common b640adb1cd646ec097f8df5b6deca9f0
+ /etc/X11/Xreset.d/README b344c222b5daf81926fd3270df374b5f
+ /etc/X11/Xreset 05d188ccac2f3360af8fe0c216640233
+ /etc/X11/Xsession 50678401170c9c701d2375bd279690c5
+ /etc/X11/rgb.txt 09ee098b83d94c7c046d6b55ebe84ae1
+ /etc/init.d/x11-common aacceda738fb4e684ff00b5ac3fb6c0a
+Description: X Window System (X.Org) infrastructure
+ x11-common contains the filesystem infrastructure required for further
+ installation of the X Window System in any configuration; it does not
+ provide a full installation of clients, servers, libraries, and utilities
+ required to run the X Window System.
+ .
+ A number of terms are used to refer to the X Window System, including "X",
+ "X Version 11", "X11", "X11R6", and "X11R7".  The version of X used in
+ Debian is derived from the version released by the X.Org Foundation, and
+ is thus often also referred to as "X.Org".  All of the preceding quoted
+ terms are functionally interchangeable in an Debian system.
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libprocessui4a
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 442
+Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
+Architecture: amd64
+Source: kde-workspace
+Version: 4:4.11.11-0ubuntu0.1
+Replaces: libprocessui4, libprocessui4-api
+Provides: libprocessui4-api
+Depends: libc6 (>= 2.14), libkdecore5 (>= 4:4.5.85), libkdeui5 (>= 4:4.3.4), libprocesscore4abi1 (= 4:4.11.11-0ubuntu0.1), libqt4-dbus (>= 4:4.5.3), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.8.0), libqtwebkit4, libstdc++6 (>= 4.1.1)
+Breaks: libprocessui4, libprocessui4-api
+Description: library for ksysguard process user interface
+ This package contains libraries needed for ksysguard process user interface.
+ .
+ This package is part of the KDE base workspace module.
+Homepage: http://www.kde.org/
+Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+
+Package: kdoctools
+Status: install ok installed
+Priority: optional
+Section: doc
+Installed-Size: 2067
+Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
+Architecture: amd64
+Source: kde4libs
+Version: 4:4.14.2-0ubuntu1~ubuntu14.04~ppa1
+Depends: docbook-xml, docbook-xsl, libxml2-utils, libc6 (>= 2.14), libkdecore5 (= 4:4.14.2-0ubuntu1~ubuntu14.04~ppa1), libkio5 (= 4:4.14.2-0ubuntu1~ubuntu14.04~ppa1), libqtcore4 (>= 4:4.8.0), libqtgui4 (>= 4:4.8.0), libstdc++6 (>= 4.1.1), libxml2 (>= 2.7.4), libxslt1.1 (>= 1.1.25)
+Description: various tools for accessing application documentation
+ This package provides KDE documentation tools (including the "help" KIO slave)
+ for accessing documentation of KDE and GNOME applications.
+ .
+ This package is part of the KDE Development Platform libraries module.
+Homepage: http://www.kde.org/
+Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+
+Package: libopenal1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 402
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: openal-soft
+Version: 1:1.14-4ubuntu1
+Depends: libopenal-data (= 1:1.14-4ubuntu1), libc6 (>= 2.14)
+Pre-Depends: multiarch-support
+Recommends: libasound2 (>= 1.0.23), libpulse0 (>= 1:0.99.1)
+Suggests: libportaudio2 (>= 19+svn20101113), libroar-compat2
+Description: Software implementation of the OpenAL API (shared library)
+ OpenAL, the Open Audio Library, is a joint effort to create an open,
+ vendor-neutral, cross-platform API for interactive, primarily spatialized
+ audio. OpenAL's primary audience are application developers and desktop
+ users that rely on portable standards like OpenGL, for games and other
+ multimedia applications.
+ .
+ This library is meant as a compatible update/replacement to the OpenAL Sample
+ Implementation (the SI). The SI has been unmaintained for quite a while, and
+ would require a lot of work to clean up. This is a fork the old Windows version
+ to attempt an accelerated ALSA version of an OpenAL implementation.
+ .
+ OpenAL Soft supports mono, stereo, 4-channel, 5.1, 6.1, and 7.1 output, as
+ opposed to the SI's 4-channel max (though it did have some provisions for 6
+ channel, this was not 5.1, and was seemingly a "late" addition). OpenAL Soft
+ does not support the Vorbis and MP3 extensions, however those were considered
+ deprecated even in the SI. It does, though, support some of the newer
+ extensions like AL_EXT_FLOAT32 and AL_EXT_MCFORMATS for multi-channel and
+ floating-point formats, as well as ALC_EXT_EFX for environmental audio effects,
+ and others.
+ .
+ This package installs the OpenAL Soft shared library.
+Homepage: http://kcat.strangesoft.net/openal.html
+Original-Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+
+Package: libopenal1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 389
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: i386
+Multi-Arch: same
+Source: openal-soft
+Version: 1:1.14-4ubuntu1
+Depends: libopenal-data (= 1:1.14-4ubuntu1), libc6 (>= 2.4)
+Pre-Depends: multiarch-support
+Recommends: libasound2 (>= 1.0.23), libpulse0 (>= 1:0.99.1)
+Suggests: libportaudio2 (>= 19+svn20101113), libroar-compat2
+Description: Software implementation of the OpenAL API (shared library)
+ OpenAL, the Open Audio Library, is a joint effort to create an open,
+ vendor-neutral, cross-platform API for interactive, primarily spatialized
+ audio. OpenAL's primary audience are application developers and desktop
+ users that rely on portable standards like OpenGL, for games and other
+ multimedia applications.
+ .
+ This library is meant as a compatible update/replacement to the OpenAL Sample
+ Implementation (the SI). The SI has been unmaintained for quite a while, and
+ would require a lot of work to clean up. This is a fork the old Windows version
+ to attempt an accelerated ALSA version of an OpenAL implementation.
+ .
+ OpenAL Soft supports mono, stereo, 4-channel, 5.1, 6.1, and 7.1 output, as
+ opposed to the SI's 4-channel max (though it did have some provisions for 6
+ channel, this was not 5.1, and was seemingly a "late" addition). OpenAL Soft
+ does not support the Vorbis and MP3 extensions, however those were considered
+ deprecated even in the SI. It does, though, support some of the newer
+ extensions like AL_EXT_FLOAT32 and AL_EXT_MCFORMATS for multi-channel and
+ floating-point formats, as well as ALC_EXT_EFX for environmental audio effects,
+ and others.
+ .
+ This package installs the OpenAL Soft shared library.
+Homepage: http://kcat.strangesoft.net/openal.html
+Original-Maintainer: Debian Games Team <pkg-games-devel@lists.alioth.debian.org>
+
+Package: net-tools
+Status: install ok installed
+Priority: important
+Section: net
+Installed-Size: 708
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 1.60-25ubuntu2.1
+Replaces: ja-trans (<= 0.8-2), netbase (<< 4.00)
+Depends: libc6 (>= 2.14)
+Conflicts: ja-trans (<= 0.8-2)
+Description: The NET-3 networking toolkit
+ This package includes the important tools for controlling the network
+ subsystem of the Linux kernel.  This includes arp, ifconfig, netstat,
+ rarp, nameif and route.  Additionally, this package contains utilities
+ relating to particular network hardware types (plipconfig, slattach,
+ mii-tool) and advanced aspects of IP configuration (iptunnel, ipmaddr).
+ .
+ In the upstream package 'hostname' and friends are included. Those are
+ not installed by this package, since there is a special "hostname*.deb".
+Homepage: http://net-tools.berlios.de/
+Original-Maintainer: net-tools Team <pkg-net-tools-maintainers@lists.alioth.debian.org>
+
+Package: wireless-regdb
+Status: install ok installed
+Priority: optional
+Section: net
+Installed-Size: 52
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Version: 2013.02.13-1ubuntu1
+Suggests: crda
+Description: wireless regulatory database
+ This package contains the wireless regulatory database used by the Central
+ Regulatory Database Agent (CRDA) to configure wireless devices to operate
+ within the radio spectrum allowed in the local jurisdiction.
+ .
+ This regulatory information is provided with no warranty either expressed or
+ implied. Only Linux drivers which use cfg80211 framework can make use of the
+ regulatory database and CRDA.
+Homepage: http://wireless.kernel.org/en/developers/Regulatory/#The_regulatory_database
+Original-Maintainer: Ben Hutchings <ben@decadent.org.uk>
+
+Package: libkpgp4
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 368
+Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
+Architecture: amd64
+Source: kdepim
+Version: 4:4.14.2-0ubuntu1~ubuntu14.04~ppa1
+Depends: perl, libc6 (>= 2.16), libkdecore5, libkdeui5, libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.5.3), libstdc++6 (>= 4.1.1)
+Description: gpg based crypto library
+ This package contains libkpgp4, a gnupg-library for KMail and other parts of
+ kdepim using gpg-based crypto.
+ .
+ This package is part of the KDE PIM module.
+Homepage: http://pim.kde.org/
+Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+
+Package: ca-certificates-java
+Status: install ok installed
+Priority: optional
+Section: java
+Installed-Size: 75
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Multi-Arch: foreign
+Version: 20130815ubuntu1
+Depends: ca-certificates (>= 20121114), openjdk-7-jre-headless (>= 7~u3-2.1.1~pre1-1) | java6-runtime-headless, libnss3 (>= 3.12.9+ckbi-1.82-0ubuntu3~)
+Conffiles:
+ /etc/default/cacerts 0ded97abeff69c2362939e2e881e214a
+ /etc/ca-certificates/update.d/jks-keystore b3bbe485f358ff3e9495b039cf25aa71
+Description: Common CA certificates (JKS keystore)
+ This package uses the hooks of the ca-certificates package to update the
+ cacerts JKS keystore used for many java runtimes.
+Original-Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+
+Package: libxfixes3
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 62
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxfixes
+Version: 1:5.0.1-1ubuntu1.1
+Depends: libc6 (>= 2.14), libx11-6 (>= 2:1.6.0)
+Pre-Depends: multiarch-support
+Breaks: unity (<< 7.0.2), xserver-xorg-core (<< 2:1.14)
+Description: X11 miscellaneous 'fixes' extension library
+ libXfixes provides an X Window System client interface to the 'XFIXES'
+ extension to the X protocol.
+ .
+ It provides support for Region types, and some cursor functions.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXfixes
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libxfixes3
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 57
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: i386
+Multi-Arch: same
+Source: libxfixes
+Version: 1:5.0.1-1ubuntu1.1
+Depends: libc6 (>= 2.1.3), libx11-6 (>= 2:1.6.0)
+Pre-Depends: multiarch-support
+Breaks: unity (<< 7.0.2), xserver-xorg-core (<< 2:1.14)
+Description: X11 miscellaneous 'fixes' extension library
+ libXfixes provides an X Window System client interface to the 'XFIXES'
+ extension to the X protocol.
+ .
+ It provides support for Region types, and some cursor functions.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libXfixes
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libgda-5.0-common
+Status: install ok installed
+Priority: optional
+Section: database
+Installed-Size: 7759
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Source: libgda5
+Version: 5.2.2-1
+Depends: python:any (>= 2.7.1-0ubuntu2), libjs-jquery
+Recommends: libgda-5.0-4
+Conffiles:
+ /etc/libgda-5.0/config a775169e7c1da0996c4a21bbf474b0a6
+Description: data abstraction library based on GLib -- common files
+ libgda is a (relatively small) database abstraction/access library
+ integrated on the GLib object model. It can be used as a metadata
+ extractor, to get information about all database objects in a common
+ way, and as an ODBC-like wrapper to access data in different engines
+ through an easier API.
+ .
+ This package contains common files for libgda.
+Original-Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Homepage: http://www.gnome-db.org/
+
+Package: unrar
+Status: install ok installed
+Priority: optional
+Section: non-free/utils
+Installed-Size: 299
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Source: unrar-nonfree
+Version: 1:5.0.10-1
+Depends: libc6 (>= 2.14), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.1.1)
+Conflicts: rar (<= 2.60-1)
+Description: Unarchiver for .rar files (non-free version)
+ Unrar can extract files from .rar archives. If you want to create .rar
+ archives, install package rar.
+Original-Maintainer: Martin Meredith <mez@debian.org>
+Homepage: http://www.rarlabs.com/
+
+Package: python-glade2
+Status: install ok installed
+Priority: optional
+Section: python
+Installed-Size: 102
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Source: pygtk
+Version: 2.24.0-3ubuntu3
+Depends: python (>= 2.7), python (<< 2.8), libc6 (>= 2.2.5), libglade2-0 (>= 1:2.6.4-2~), libglib2.0-0 (>= 2.12.0), libgtk2.0-0 (>= 2.18.0), python-gtk2 (= 2.24.0-3ubuntu3)
+Suggests: python-gtk2-doc
+Description: GTK+ bindings: Glade support
+ Contains bindings for the glade library from use within Python. Glade
+ makes it very easy to create a user interface. In the target
+ application you just need to load the interface description from
+ the .glade file instead of constructing the GUI at runtime.
+Homepage: http://www.pygtk.org/
+Original-Maintainer: Sebastien Bacher <seb128@debian.org>
+
+Package: libk3b6-extracodecs
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 259
+Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
+Architecture: amd64
+Source: k3b
+Version: 2.0.2-7ubuntu1
+Depends: libavcodec54 (>= 6:9.1-1) | libavcodec-extra-54 (>= 6:9.10), libavformat54 (
