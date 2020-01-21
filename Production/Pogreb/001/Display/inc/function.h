@@ -49,7 +49,7 @@ typedef struct Bus{
   MyBusCmd Cmd;
   MyBusStatus Status;
   uint16_t Address;
-  uint16_t Data;
+  int16_t Data;
   uint8_t CRC8;
 }MyBus;
 
@@ -61,6 +61,9 @@ void Delay_ms(uint16_t u16Delay);
 void SendPacket(void);
 void ReceivePacket(void);
 void Led(LedCMD status);
+
+int16_t ReadReg(uint8_t address);
+void WriteReg(uint8_t address, int16_t data);
 
 uint8_t Crc8(uint8_t *pcBlock, uint8_t len);
 
