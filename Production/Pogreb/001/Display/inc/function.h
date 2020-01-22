@@ -17,17 +17,20 @@
 
 #define BEEP_FREQUENCY  BEEP_FREQUENCY_1KHZ
 
-#define DATA_PACKER_LEN (uint8_t)13
+#define DATA_PACKER_LEN (uint8_t)7
+#define REGISTER_COUNT 10
 
 typedef enum {
-  ReadRegister = (uint8_t)0,
-  WriteRegister = (uint8_t)1
+  ReadStatus = (uint8_t)0,      //запрос статуса
+  ReadRegister = (uint8_t)1,    //чтение регистра
+  WriteRegister = (uint8_t)2,   //запись регистра
+  ErrorCRC = (uint8_t)3,        //ошибка CRC8
+  StatusOK = (uint8_t)4,        //ответ "стстус ОК"
+  ErrorCmd = (uint8_t)5,         //неверная комманда  
+  ErrorRegister = (uint8_t)6     //ошибка доступа к регистру
+    
 }MyBusCmd;
 
-typedef enum {
-  OK = (uint8_t)0x00,
-  Error = (uint8_t)0x01
-}MyBusStatus;
 
 typedef enum {
   BEEP_REFRESH = (uint8_t)0x00,
@@ -40,18 +43,23 @@ typedef enum {
   LED_FLASH = (uint8_t)0x01
 }LedCMD;
 
-
-
-typedef struct Bus{
-  uint32_t StartMarker;
-  uint8_t TxAddr;
-  uint8_t RxAddr;
+typedef struct Packet {
+  uint8_t Address;
   MyBusCmd Cmd;
-  MyBusStatus Status;
-  uint16_t Address;
-  int16_t Data;
+  uint16_t RegAddr;
+  int16_t RegData;
   uint8_t CRC8;
-}MyBus;
+}MyPacket;
+
+typedef struct Register{
+  int16_t TempIndoor;
+  int16_t TempOutdoor;
+  int16_t TempAdj;
+  int8_t TempDelta;
+  bool CoolerCold;
+  bool CoolerHeater;
+  bool CoolerCirk;
+}MyRegister;
 
 
 
@@ -62,10 +70,13 @@ void SendPacket(void);
 void ReceivePacket(void);
 void Led(LedCMD status);
 
-int16_t ReadReg(uint8_t address);
-void WriteReg(uint8_t address, int16_t data);
+bool ReadReg(uint16_t address, int16_t * data);
+bool WriteReg(uint16_t address, int16_t * data);
 
 uint8_t Crc8(uint8_t *pcBlock, uint8_t len);
+unsigned char DallasCrc8(const uint8_t * data, const uint8_t size);
+
+
 
 
 #endif /*__FUNCTION_H*/

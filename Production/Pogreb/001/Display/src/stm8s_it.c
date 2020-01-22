@@ -15,15 +15,17 @@ extern volatile bool b_Key_Scan_Flag;
 
 extern uint8_t u8RxCounter;
 extern uint8_t u8TxCounter;
-extern MyBus DataReceive;
-extern MyBus DataTransmite;
+extern MyPacket DataReceive;
+extern MyPacket DataTransmite;
 
 extern bool bPacketReceive;
 
-extern uint8_t GoodStartMarker[4];
 
 uint8_t u8TmpBuff[DATA_PACKER_LEN];
 uint8_t u8TmpCounter = 0;
+
+uint8_t u8TimeOut = 0; // переменна€ дл€ отслеживани€ преевышени€ timeout UART
+#define TIMEOUT 3       //3 ms
 
 
 
@@ -172,42 +174,25 @@ INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
     
     if(u8RxCounter == 0){
       //ѕоиск начала пакета
-      u8TmpBuff[u8TmpCounter] = data;
-      if(data == GoodStartMarker[u8TmpCounter]){
-        //StartMarker сходитс€
-        u8TmpCounter++;
-        
-      }
-      else{
-        //ќшибка в стартовом маркере!!!!!
-        u8TmpCounter = 0;
-        
-        if(data == GoodStartMarker[0]){
-          //но если это начало данные совпадают с начальным байтом
-          //мадкера то это начало верного пакета
-          u8TmpCounter++;
-        }
-      }
-      
-      if(u8TmpCounter == 4){
-        //¬ерно получили начало пакета!!!!!!!
-        u8TmpCounter = 0;
-        u8RxCounter = 4;
-      }
+      u8TmpBuff[u8RxCounter] = data;
+      u8TimeOut = 1;//start timeout
+      u8RxCounter++;
     }
-    
     else {
       u8TmpBuff[u8RxCounter] = data;
       u8RxCounter++;
-      if(u8RxCounter == DATA_PACKER_LEN){
-        //ѕакет получен полностью!!!!!
-        for(uint8_t i = 0; i < DATA_PACKER_LEN; i++){
-          *((uint8_t *)(&DataReceive) + i) = u8TmpBuff[i];
+        
+        if(u8RxCounter >= DATA_PACKER_LEN){
+          //ѕакет получен полностью!!!!!
+          for(uint8_t i = 0; i < DATA_PACKER_LEN; i++){
+            *((uint8_t *)(&DataReceive) + i) = u8TmpBuff[i];
+          }
+          u8TimeOut = 0;
+          u8RxCounter = 0;
+          bPacketReceive = TRUE;
         }
-        bPacketReceive = TRUE;
-        u8RxCounter=0;
-      }
     }
+      
   }
 }
 #endif
@@ -238,6 +223,13 @@ INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
   uiCounter_1S++;
   uiCounter_100mS++;
   
+  if(u8TimeOut > 0){
+    u8TimeOut++;
+    if(u8TimeOut > TIMEOUT){
+      u8RxCounter = 0;  //сброс счетчика байтов принимаемого пакета
+    }
+  }
+  
   if(uiCounter_1S >= 1000)
   {
     uiCounter_1S = 0;
@@ -266,3 +258,61 @@ INTERRUPT_HANDLER(EEPROM_EEC_IRQHandler, 24)
 	while (1){};
 }
 #endif
+
+
+/*
+#ifndef UART1_RX_IRQ 
+//UART1 RX Interrupt routine.
+INTERRUPT_HANDLER(UART1_RX_IRQHandler, 18)
+{
+	//while (1){};
+  if(UART1_GetFlagStatus( UART1_FLAG_RXNE)){
+    uint8_t data = UART1_ReceiveData8();
+    
+    if(u8RxCounter == 0){
+      //ѕоиск начала пакета
+      u8TmpBuff[u8TmpCounter] = data;
+      if(data == GoodStartMarker[u8TmpCounter]){
+        //StartMarker сходитс€
+        u8TmpCounter++;
+        if(!u8TimeOut)u8TimeOut = 1;
+        
+      }
+      else{
+        //ќшибка в стартовом маркере!!!!!
+        u8TmpCounter = 0;
+        u8TimeOut = 0;
+        
+        if(data == GoodStartMarker[0]){
+          //но если это начало данные совпадают с начальным байтом
+          //мадкера то это начало верного пакета
+          u8TmpCounter++;
+          u8TimeOut = 1;
+        }
+      }
+      
+      if(u8TmpCounter == 4){
+        //¬ерно получили начало пакета!!!!!!!
+        u8TmpCounter = 0;
+        u8RxCounter = 4;
+      }
+    }
+    
+    else {
+      u8TmpBuff[u8RxCounter] = data;
+      u8RxCounter++;
+      if(u8RxCounter == DATA_PACKER_LEN){
+        //ѕакет получен полностью!!!!!
+        for(uint8_t i = 0; i < DATA_PACKER_LEN; i++){
+          *((uint8_t *)(&DataReceive) + i) = u8TmpBuff[i];
+        }
+        
+        u8RxCounter=0;
+        u8TimeOut = 0;
+        bPacketReceive = TRUE;
+      }
+    }
+  }
+}
+#endif
+*/
