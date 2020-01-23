@@ -43,17 +43,9 @@
 #endif
 
 
-#define KEY_EXIT_PORT   GPIOC
-#define KEY_EXIT_PIN    GPIO_PIN_6
 
-#define KEY_MENU_PORT   GPIOC
-#define KEY_MENU_PIN    GPIO_PIN_4
-
-#define KEY_PLUS_PORT   GPIOC
-#define KEY_PLUS_PIN    GPIO_PIN_7
-
-#define KEY_MINUS_PORT  GPIOC
-#define KEY_MINUS_PIN   GPIO_PIN_5
+#define KEY_ENCODER_PORT  GPIOC
+#define KEY_ENCODER_PIN   GPIO_PIN_5
 
     
      
@@ -68,15 +60,14 @@
   
  
 void KeyScan(void);
-void KeyExitAction(void);
-void KeyMenuAction(void);
-void KeyPlusAction(void);
-void KeyMinusAction(void);
+void EncoderScan(void);
+void KeyEncoderAction(void);
 
 void SysClock_Cong(void);
 void UART1_Conf(void);
-void SPI_Conf(void);
+
 void GPIO_Conf(void);
+void TIM1_Conf();
 void TIM4_Conf(void);
 void EXTI_Conf(void);
 

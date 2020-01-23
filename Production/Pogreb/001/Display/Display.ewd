@@ -195,11 +195,11 @@
                 </option>
                 <option>
                     <name>STlinkOptionBytesSetupFileOver</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>STlinkOptionBytesSetupFile</name>
-                    <state></state>
+                    <state>F:\Projects\STM8\STM8\Production\Pogreb\001\Display\OptionBytes.obc</state>
                 </option>
                 <option>
                     <name>STlinkEraseMemory</name>

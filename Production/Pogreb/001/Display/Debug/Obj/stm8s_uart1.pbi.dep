@@ -10,6 +10,6 @@ stm8s_uart1.pbi: \
   F:\Projects\STM8\STM8\Production\Pogreb\001\Display\lib\SPL\inc\stm8s_exti.h \
   F:\Projects\STM8\STM8\Production\Pogreb\001\Display\lib\SPL\inc\stm8s_flash.h \
   F:\Projects\STM8\STM8\Production\Pogreb\001\Display\lib\SPL\inc\stm8s_gpio.h \
-  F:\Projects\STM8\STM8\Production\Pogreb\001\Display\lib\SPL\inc\stm8s_spi.h \
+  F:\Projects\STM8\STM8\Production\Pogreb\001\Display\lib\SPL\inc\stm8s_tim1.h \
   F:\Projects\STM8\STM8\Production\Pogreb\001\Display\lib\SPL\inc\stm8s_tim4.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\stm8\inc\c\intrinsics.h

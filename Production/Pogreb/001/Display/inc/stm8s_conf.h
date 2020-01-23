@@ -49,8 +49,8 @@
 //#include "stm8s_itc.h"
 //#include "stm8s_iwdg.h"
 //#include "stm8s_rst.h"
-#include "stm8s_spi.h"
-//#include "stm8s_tim1.h"
+//#include "stm8s_spi.h"
+#include "stm8s_tim1.h"
 
 //#include "stm8s_tim2.h"
 

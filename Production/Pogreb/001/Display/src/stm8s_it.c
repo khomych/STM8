@@ -12,6 +12,7 @@ extern volatile bool b_100mS_Flag;
 
 extern volatile uint32_t u32Millis; //
 extern volatile bool b_Key_Scan_Flag;
+extern volatile bool b_Encoder_Scan_Flag; //Флаг события EncoderScan
 
 extern uint8_t u8RxCounter;
 extern uint8_t u8TxCounter;
@@ -243,6 +244,7 @@ INTERRUPT_HANDLER(TIM4_UPD_OVF_IRQHandler, 23)
   }
 
   b_Key_Scan_Flag = TRUE;
+  b_Encoder_Scan_Flag = TRUE;
 
   TIM4_ClearITPendingBit(TIM4_IT_UPDATE);
   

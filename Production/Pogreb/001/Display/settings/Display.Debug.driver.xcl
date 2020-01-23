@@ -6,6 +6,10 @@
 
 "STM8S103F3P" 
 
+"--option_bytes_file" 
+
+"F:\Projects\STM8\STM8\Production\Pogreb\001\Display\OptionBytes.obc" 
+
 "--erase_memory" 
 
 
